@@ -1,0 +1,13 @@
+fileVersion: 1
+id: "140"
+name: GOOGLE_ADS__ACCOUNT_REPORT
+steps:
+  - 1e574c89-02dd-4e9e-adaa-464cb5f687c5
+  - 243e6ded-b771-4e0d-a665-46d5ba9a593d
+  - 350af704-ac24-44b8-8065-0cabf2298103
+  - 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+  - 66cfd4c7-8d7a-452d-b221-6390d5d0f876
+  - 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+  - c3f7425c-4ddb-4f5a-8b8a-36354b052c7a
+type: Subgraph
+version: 1

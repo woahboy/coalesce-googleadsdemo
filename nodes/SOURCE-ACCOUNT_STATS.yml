@@ -1,0 +1,381 @@
+fileVersion: 1
+id: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+name: ACCOUNT_STATS
+operation:
+  database: ""
+  dataset: ""
+  deployEnabled: true
+  description: ""
+  locationName: SOURCE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 50f7d8c4-e76d-4d7b-af72-172c755c05ef
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: CUSTOMER_ID
+        nullable: false
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a48ffeed-5ac8-4b2c-9b9b-2d79c19aa9e2
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: DATE
+        defaultValue: ""
+        description: ""
+        name: DATE
+        nullable: false
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4da9e264-dfc6-4abd-82fd-256fbf0419ac
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: VARCHAR(256)
+        defaultValue: ""
+        description: ""
+        name: _FIVETRAN_ID
+        nullable: false
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e743a32-4339-433f-9e24-ae45777f0fdd
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: FLOAT
+        defaultValue: ""
+        description: ""
+        name: CONVERSIONS_VALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b6f80c92-e495-4a48-ad8d-9973c4074279
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: FLOAT
+        defaultValue: ""
+        description: ""
+        name: CONVERSIONS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5468bf04-677f-4f9b-a883-c89270bad463
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: INTERACTIONS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1a22cde2-8640-46be-b0b8-5fe283e93ad3
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: VARCHAR(256)
+        defaultValue: ""
+        description: ""
+        name: AD_NETWORK_TYPE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: edb8bc76-5902-456e-88b8-d8ea636315f8
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: VARCHAR(256)
+        defaultValue: ""
+        description: ""
+        name: INTERACTION_EVENT_TYPES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4322658e-1826-4100-b331-eaa800292fcf
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: IMPRESSIONS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d3b2370b-b1ec-47ea-ab9d-5073b1fd4b94
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: FLOAT
+        defaultValue: ""
+        description: ""
+        name: ACTIVE_VIEW_VIEWABILITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 301692a5-2198-44a6-abcf-364c98f70348
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: VARCHAR(256)
+        defaultValue: ""
+        description: ""
+        name: DEVICE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 07b8376f-1f85-4aa1-944e-0204eab1bebc
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: VIEW_THROUGH_CONVERSIONS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1bfa4bf-c187-44aa-b1f4-4862c3997f37
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: ACTIVE_VIEW_IMPRESSIONS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 03ca300d-d870-4971-a7e9-88e76581ccf3
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: CLICKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: afdbfd19-e044-476b-99a7-31d19c41a1d5
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: ACTIVE_VIEW_MEASURABLE_IMPRESSIONS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3533fad4-62b6-4142-908a-8bfa9f9140b0
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: ACTIVE_VIEW_MEASURABLE_COST_MICROS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cbc441ac-a5e0-422a-9871-80961ab1d701
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: FLOAT
+        defaultValue: ""
+        description: ""
+        name: ACTIVE_VIEW_MEASURABILITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc8a14c0-126a-4427-9e22-71697ca5c182
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: COST_MICROS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 99f4dadb-dd74-4862-993d-5874afd1c242
+          stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        defaultValue: ""
+        description: ""
+        name: _FIVETRAN_SYNCED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    join:
+      joinCondition: FROM {{ ref('SOURCE', 'ACCOUNT_STATS') }}
+  name: ACCOUNT_STATS
+  schema: ""
+  sqlType: Source
+  table: ACCOUNT_STATS
+  type: sourceInput
+  version: 1
+type: Node

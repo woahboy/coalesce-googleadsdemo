@@ -1,0 +1,16 @@
+fileVersion: 1
+id: "139"
+name: GOOGLE_ADS__CAMPAIGN_REPORT
+steps:
+  - 22b683d4-ce73-4c07-8a1a-2282b28bf764
+  - 243e6ded-b771-4e0d-a665-46d5ba9a593d
+  - 2ac4d30b-62e8-41e7-80f2-713b2b3fb2af
+  - 350af704-ac24-44b8-8065-0cabf2298103
+  - 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+  - a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+  - bde42de0-935c-4a94-8738-e66f4481fd9a
+  - cf6aa96d-e9fa-447f-9fed-53cbb32a406e
+  - d90f083b-4630-4ce5-b0a8-1f746eb36111
+  - f79634d8-256e-4408-8191-36355e3afa86
+type: Subgraph
+version: 1

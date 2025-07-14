@@ -1,0 +1,392 @@
+fileVersion: 1
+id: 425fccb9-980b-46c8-8d89-22f30a0254c5
+name: METRICS
+operation:
+  config:
+    clusterKey: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: UNION ALL
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    refresh_mode: AUTO
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: false
+    warehouseName: "{{ parameters.GoogleAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: true
+  locationName: TARGET
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 74ba2142-9cff-4b0c-8ac4-a4cc62a7c15d
+          stepCounter: 425fccb9-980b-46c8-8d89-22f30a0254c5
+        config: {}
+        dataType: FLOAT
+        description: ""
+        name: TOTAL_VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5e743a32-4339-433f-9e24-ae45777f0fdd
+                stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+            transform: SUM(COALESCE("ACCOUNT_STATS"."CONVERSIONS_VALUE", 0))
+          - columnReferences:
+              - columnCounter: 70762d3e-c3b4-4cdb-bf1d-085428477176
+                stepCounter: 66cfd4c7-8d7a-452d-b221-6390d5d0f876
+            transform: SUM(COALESCE("GOOGLE_ADS__ACCOUNT_REPORT"."CONVERSIONS_VALUE", 0))
+          - columnReferences:
+              - columnCounter: 70fbd27b-d14d-455c-af5e-dc74067f46e8
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: SUM(COALESCE("AD_STATS"."CONVERSIONS_VALUE", 0))
+          - columnReferences:
+              - columnCounter: a06ac2b7-3037-41b3-8e02-165fe3616212
+                stepCounter: a85a171a-dbce-4c6c-9163-6d4234dde278
+            transform: SUM(COALESCE("GOOGLE_ADS__AD_REPORT"."CONVERSIONS_VALUE", 0))
+          - columnReferences:
+              - columnCounter: f37b4305-f740-4d18-8ec5-9c77abff73e1
+                stepCounter: 7b7b5365-e7d0-4e2b-91ea-ee2a386eef16
+            transform: SUM(COALESCE("AD_GROUP_STATS"."CONVERSIONS_VALUE", 0))
+          - columnReferences:
+              - columnCounter: 30534ea9-8afa-4412-9892-3235d4bd872f
+                stepCounter: 2b22afef-dac5-4e0d-8408-f25cab7bc375
+            transform: SUM(COALESCE("GOOGLE_ADS__AD_GROUP_REPORT"."CONVERSIONS_VALUE", 0))
+          - columnReferences:
+              - columnCounter: a2498c77-95ed-4583-ab14-2e216254d7b8
+                stepCounter: f79634d8-256e-4408-8191-36355e3afa86
+            transform: SUM(COALESCE("CAMPAIGN_STATS"."CONVERSIONS_VALUE", 0))
+          - columnReferences:
+              - columnCounter: 1f5cfb24-7eee-4a84-b726-f5bac6a17506
+                stepCounter: cf6aa96d-e9fa-447f-9fed-53cbb32a406e
+            transform: SUM(COALESCE("GOOGLE_ADS__CAMPAIGN_REPORT"."CONVERSIONS_VALUE", 0))
+          - columnReferences:
+              - columnCounter: 70fbd27b-d14d-455c-af5e-dc74067f46e8
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: SUM(COALESCE("AD_STATS"."CONVERSIONS_VALUE", 0))
+          - columnReferences:
+              - columnCounter: 584eeacd-af9b-4ac2-997b-9f8d66103c62
+                stepCounter: 53b8a206-4c8b-4970-bcbb-2025ddadd288
+            transform: ""
+          - columnReferences:
+              - columnCounter: dc8718a7-9714-4e44-b198-ff32315b8e12
+                stepCounter: ef9a789f-1fea-4def-911c-70f85631b1e0
+            transform: SUM(COALESCE("KEYWORD_STATS"."CONVERSIONS_VALUE", 0))
+          - columnReferences:
+              - columnCounter: e8563e40-465f-4b05-a7bd-e2eb09f60b2f
+                stepCounter: afdeeafd-7cca-42e5-87ed-37b7fa1fa8cb
+            transform: SUM(COALESCE("GOOGLE_ADS__KEYWORD_REPORT"."CONVERSIONS_VALUE", 0))
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9be85aa1-8c4d-4186-b909-46d98b26605a
+          stepCounter: 425fccb9-980b-46c8-8d89-22f30a0254c5
+        config: {}
+        dataType: FLOAT
+        description: ""
+        name: CONVERSIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b6f80c92-e495-4a48-ad8d-9973c4074279
+                stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+            transform: SUM(COALESCE("ACCOUNT_STATS"."CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: 58cac2bb-5512-4157-8233-c7f2d2c1a369
+                stepCounter: 66cfd4c7-8d7a-452d-b221-6390d5d0f876
+            transform: SUM(COALESCE("GOOGLE_ADS__ACCOUNT_REPORT"."CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: cfb64afd-78aa-4f0b-9c38-085c3d27297f
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: SUM(COALESCE("AD_STATS"."CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: 5a06eba2-36a7-4c87-b8e7-c0d6a5d98e50
+                stepCounter: a85a171a-dbce-4c6c-9163-6d4234dde278
+            transform: SUM(COALESCE("GOOGLE_ADS__AD_REPORT"."CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: 9b53aaec-bef6-4a6c-9e25-b5ef4c13af90
+                stepCounter: 7b7b5365-e7d0-4e2b-91ea-ee2a386eef16
+            transform: SUM(COALESCE("AD_GROUP_STATS"."CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: 0d1bc5bd-169c-4387-beaf-19018a2ace6a
+                stepCounter: 2b22afef-dac5-4e0d-8408-f25cab7bc375
+            transform: SUM(COALESCE("GOOGLE_ADS__AD_GROUP_REPORT"."CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: 9adbf53c-cc45-4996-ab9c-625076472c02
+                stepCounter: f79634d8-256e-4408-8191-36355e3afa86
+            transform: SUM(COALESCE("CAMPAIGN_STATS"."CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: d01568c9-d3fd-438c-90f7-39ae1775ef33
+                stepCounter: cf6aa96d-e9fa-447f-9fed-53cbb32a406e
+            transform: SUM(COALESCE("GOOGLE_ADS__CAMPAIGN_REPORT"."CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: cfb64afd-78aa-4f0b-9c38-085c3d27297f
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: SUM(COALESCE("AD_STATS"."CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: 325a3b36-c5cd-45c5-be1f-4a58e8eb1361
+                stepCounter: 53b8a206-4c8b-4970-bcbb-2025ddadd288
+            transform: ""
+          - columnReferences:
+              - columnCounter: 60746cd6-cd70-408a-8743-6d9be4d9fdc2
+                stepCounter: ef9a789f-1fea-4def-911c-70f85631b1e0
+            transform: SUM(COALESCE("KEYWORD_STATS"."CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: b8d3f21b-794e-4185-b1a7-7fb7c518f353
+                stepCounter: afdeeafd-7cca-42e5-87ed-37b7fa1fa8cb
+            transform: SUM(COALESCE("GOOGLE_ADS__KEYWORD_REPORT"."CONVERSIONS", 0))
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a8802824-4a38-4414-bd46-cdaf00c609bb
+          stepCounter: 425fccb9-980b-46c8-8d89-22f30a0254c5
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: VIEW_THROUGH_CONVERSIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 07b8376f-1f85-4aa1-944e-0204eab1bebc
+                stepCounter: 5b8481e2-73f1-4390-bd8e-bdc3dfea48d8
+            transform: SUM(COALESCE("ACCOUNT_STATS"."VIEW_THROUGH_CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: 6748c2e9-80c8-483a-98ef-db700a7407a8
+                stepCounter: 66cfd4c7-8d7a-452d-b221-6390d5d0f876
+            transform: SUM(COALESCE("GOOGLE_ADS__ACCOUNT_REPORT"."VIEW_THROUGH_CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: 417c7ba0-d691-4741-80cf-c2503ac5b5f8
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: SUM(COALESCE("AD_STATS"."VIEW_THROUGH_CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: 4640f98b-d155-4f65-ad61-1e60ae3671b2
+                stepCounter: a85a171a-dbce-4c6c-9163-6d4234dde278
+            transform: SUM(COALESCE("GOOGLE_ADS__AD_REPORT"."VIEW_THROUGH_CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: acf201c8-fe4d-4a46-8bda-d1a738b30230
+                stepCounter: 7b7b5365-e7d0-4e2b-91ea-ee2a386eef16
+            transform: SUM(COALESCE("AD_GROUP_STATS"."VIEW_THROUGH_CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: 9ba48b09-308e-4e08-8880-12d2ffd369f6
+                stepCounter: 2b22afef-dac5-4e0d-8408-f25cab7bc375
+            transform: SUM(COALESCE("GOOGLE_ADS__AD_GROUP_REPORT"."VIEW_THROUGH_CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: a81f536e-d16f-441f-91e8-7208cd5eb812
+                stepCounter: f79634d8-256e-4408-8191-36355e3afa86
+            transform: SUM(COALESCE("CAMPAIGN_STATS"."VIEW_THROUGH_CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: e17c9181-5083-4ca3-b9a2-3ccd04c1cf13
+                stepCounter: cf6aa96d-e9fa-447f-9fed-53cbb32a406e
+            transform: SUM(COALESCE("GOOGLE_ADS__CAMPAIGN_REPORT"."VIEW_THROUGH_CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: 417c7ba0-d691-4741-80cf-c2503ac5b5f8
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: SUM(COALESCE("AD_STATS"."VIEW_THROUGH_CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: ade1f679-05df-4a16-bfef-9427ac489397
+                stepCounter: 53b8a206-4c8b-4970-bcbb-2025ddadd288
+            transform: ""
+          - columnReferences:
+              - columnCounter: ac021eed-6869-4842-8f01-ec5424996bc0
+                stepCounter: ef9a789f-1fea-4def-911c-70f85631b1e0
+            transform: SUM(COALESCE("KEYWORD_STATS"."VIEW_THROUGH_CONVERSIONS", 0))
+          - columnReferences:
+              - columnCounter: 7c1936b2-ac28-4d85-94f1-f9caae012c2b
+                stepCounter: afdeeafd-7cca-42e5-87ed-37b7fa1fa8cb
+            transform: SUM(COALESCE("GOOGLE_ADS__KEYWORD_REPORT"."VIEW_THROUGH_CONVERSIONS", 0))
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ede4529d-1a8b-44ec-b28f-33a4dfc12046
+          stepCounter: 425fccb9-980b-46c8-8d89-22f30a0254c5
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: CTE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: "'ACCOUNT_SOURCE'"
+          - columnReferences: []
+            transform: "'ACCOUNT_MODEL'"
+          - columnReferences: []
+            transform: "'AD_SOURCE'"
+          - columnReferences: []
+            transform: "'AD_MODEL'"
+          - columnReferences: []
+            transform: "'AD_GROUP_SOURCE'"
+          - columnReferences: []
+            transform: "'AD_GROUP_MODEL'"
+          - columnReferences: []
+            transform: "'CAMPAIGN_SOURCE'"
+          - columnReferences: []
+            transform: "'CAMPAIGN_MODEL'"
+          - columnReferences: []
+            transform: "'URL_SOURCE'"
+          - columnReferences: []
+            transform: ""
+          - columnReferences: []
+            transform: "'KEYWORD_SOURCE'"
+          - columnReferences: []
+            transform: "'KEYWORD_MODEL'"
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: ACCOUNT_STATS
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'ACCOUNT_STATS') }} "ACCOUNT_STATS"
+        name: ACCOUNT_SOURCE
+        noLinkRefs: []
+      - aliases:
+          GOOGLE_ADS__ACCOUNT_REPORT: 66cfd4c7-8d7a-452d-b221-6390d5d0f876
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: GOOGLE_ADS__ACCOUNT_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'GOOGLE_ADS__ACCOUNT_REPORT') }} "GOOGLE_ADS__ACCOUNT_REPORT"
+        name: ACCOUNT_MODEL
+        noLinkRefs: []
+      - aliases:
+          AD_STATS: 979bbbc7-f345-4add-9881-25472dc9c760
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: AD_STATS
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'AD_STATS') }} "AD_STATS"
+        name: AD_SOURCE
+        noLinkRefs: []
+      - aliases:
+          GOOGLE_ADS__AD_REPORT: a85a171a-dbce-4c6c-9163-6d4234dde278
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: GOOGLE_ADS__AD_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'GOOGLE_ADS__AD_REPORT') }} "GOOGLE_ADS__AD_REPORT"
+        name: AD_MODEL
+        noLinkRefs: []
+      - aliases:
+          AD_GROUP_STATS: 7b7b5365-e7d0-4e2b-91ea-ee2a386eef16
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: AD_GROUP_STATS
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'AD_GROUP_STATS') }} "AD_GROUP_STATS"
+        name: AD_GROUP_SOURCE
+        noLinkRefs: []
+      - aliases:
+          GOOGLE_ADS__AD_GROUP_REPORT: 2b22afef-dac5-4e0d-8408-f25cab7bc375
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: GOOGLE_ADS__AD_GROUP_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'GOOGLE_ADS__AD_GROUP_REPORT') }} "GOOGLE_ADS__AD_GROUP_REPORT"
+        name: AD_GROUP_MODEL
+        noLinkRefs: []
+      - aliases:
+          CAMPAIGN_STATS: f79634d8-256e-4408-8191-36355e3afa86
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: CAMPAIGN_STATS
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'CAMPAIGN_STATS') }} "CAMPAIGN_STATS"
+        name: CAMPAIGN_SOURCE
+        noLinkRefs: []
+      - aliases:
+          GOOGLE_ADS__CAMPAIGN_REPORT: cf6aa96d-e9fa-447f-9fed-53cbb32a406e
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: GOOGLE_ADS__CAMPAIGN_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'GOOGLE_ADS__CAMPAIGN_REPORT') }} "GOOGLE_ADS__CAMPAIGN_REPORT"
+        name: CAMPAIGN_MODEL
+        noLinkRefs: []
+      - aliases:
+          AD_HISTORY: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+          AD_STATS: 979bbbc7-f345-4add-9881-25472dc9c760
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: AD_HISTORY
+          - locationName: SOURCE
+            nodeName: AD_STATS
+        join:
+          joinCondition: |-
+            FROM {{ ref('SOURCE', 'AD_STATS') }} "AD_STATS"
+            JOIN {{ ref('SOURCE', 'AD_HISTORY') }} "AD_HISTORY"
+              ON TRUE
+            WHERE "AD_HISTORY"."FINAL_URLS" IS NOT NULL
+        name: URL_SOURCE
+        noLinkRefs: []
+      - aliases:
+          GOOGLE_ADS__URL_REPORT: 53b8a206-4c8b-4970-bcbb-2025ddadd288
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: GOOGLE_ADS__URL_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'GOOGLE_ADS__URL_REPORT') }} "GOOGLE_ADS__URL_REPORT"
+        name: URL_MODEL
+        noLinkRefs: []
+      - aliases:
+          KEYWORD_STATS: ef9a789f-1fea-4def-911c-70f85631b1e0
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: KEYWORD_STATS
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'KEYWORD_STATS') }} "KEYWORD_STATS"
+        name: KEYWORD_SOURCE
+        noLinkRefs: []
+      - aliases:
+          GOOGLE_ADS__KEYWORD_REPORT: afdeeafd-7cca-42e5-87ed-37b7fa1fa8cb
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: GOOGLE_ADS__KEYWORD_REPORT
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'GOOGLE_ADS__KEYWORD_REPORT') }} "GOOGLE_ADS__KEYWORD_REPORT"
+        name: KEYWORD_MODEL
+        noLinkRefs: []
+  name: METRICS
+  overrideSQL: false
+  schema: ""
+  sqlType: DYNAMIC:::156
+  type: sql
+  version: 1
+type: Node

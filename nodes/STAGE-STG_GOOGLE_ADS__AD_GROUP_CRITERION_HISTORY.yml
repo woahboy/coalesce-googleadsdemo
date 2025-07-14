@@ -1,0 +1,211 @@
+fileVersion: 1
+id: efffa61f-50aa-48db-b4a5-f4d184c7b8b8
+name: STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY
+operation:
+  config:
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    refresh_mode: AUTO
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+    warehouseName: "{{ parameters.GoogleAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: Each record represents a historical version of an ad group criterion in Google Ads.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3e01a5cc-9d69-4cf5-878d-cdd7336ded60
+          stepCounter: efffa61f-50aa-48db-b4a5-f4d184c7b8b8
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: The source of the record if the unioning functionality is being used. If not this field will be empty.
+        isBusinessKey: true
+        name: SOURCE_RELATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('' AS TEXT)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6330aa97-42d5-4150-9fcf-16aa8f15ee05
+          stepCounter: efffa61f-50aa-48db-b4a5-f4d184c7b8b8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: Unique identifier of the ad group criterion.
+        isBusinessKey: true
+        name: CRITERION_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b76891d1-fa27-46f3-a925-78c688848363
+                stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9afb206b-0a2a-4792-84ae-96ad70f62768
+          stepCounter: efffa61f-50aa-48db-b4a5-f4d184c7b8b8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the AdGroup.
+        name: AD_GROUP_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b0f67a2-aecc-4bb4-a349-7f046223130f
+                stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+            transform: CAST( "STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY_TMP"."AD_GROUP_ID" AS TEXT)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cd27ba69-3041-456e-8614-3085ba460883
+          stepCounter: efffa61f-50aa-48db-b4a5-f4d184c7b8b8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the Campaign.
+        name: BASE_CAMPAIGN_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(NULL AS INTEGER)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7b2e2ef4-fdc0-4248-a678-c668e5470f58
+          stepCounter: efffa61f-50aa-48db-b4a5-f4d184c7b8b8
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: Timestamp of when the record was last updated in Google Ads.
+        name: UPDATED_AT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8298ff66-6380-4da3-af70-a4475ae6e75a
+                stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 726b68a2-29e5-435a-8be8-1cc53ebb4315
+          stepCounter: efffa61f-50aa-48db-b4a5-f4d184c7b8b8
+        config: {}
+        dataType: VARCHAR(256)
+        description: The type of ad group criterion.
+        name: TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cce4e007-9aa3-4cb5-af76-d53bc991a143
+                stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c10515d0-920f-491c-a428-e75115ead6d6
+          stepCounter: efffa61f-50aa-48db-b4a5-f4d184c7b8b8
+        config: {}
+        dataType: VARCHAR(256)
+        description: The current status of the ad group criterion.
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cc9a8875-2793-466a-95d2-08b235dee819
+                stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2c53f46a-a75d-487a-8e03-2283169c967a
+          stepCounter: efffa61f-50aa-48db-b4a5-f4d184c7b8b8
+        config: {}
+        dataType: VARCHAR(256)
+        description: The match type which dictate how closely the keyword needs to match with the user’s search query so that the ad can be considered for the auction.
+        name: KEYWORD_MATCH_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a57311d-8367-4c14-af57-3b41b3b93bcf
+                stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd485b58-6032-4498-914e-556190ddbecd
+          stepCounter: efffa61f-50aa-48db-b4a5-f4d184c7b8b8
+        config: {}
+        dataType: VARCHAR(256)
+        description: The text used within the keyword criterion that is being matched against.
+        name: KEYWORD_TEXT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bbf8c79c-2502-4ac0-b70e-349a80d8d018
+                stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f7c3fae2-1ddf-4a33-903d-2bfdf32e9c72
+          stepCounter: efffa61f-50aa-48db-b4a5-f4d184c7b8b8
+        config: {}
+        dataType: BOOLEAN
+        defaultValue: ""
+        description: Boolean representing whether the record is the most recent version of the object.
+        name: IS_MOST_RECENT_RECORD
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8298ff66-6380-4da3-af70-a4475ae6e75a
+                stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+              - columnCounter: b76891d1-fa27-46f3-a925-78c688848363
+                stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+            transform: |-
+              ROW_NUMBER() OVER (
+                      PARTITION BY SOURCE_RELATION, 
+                      ID 
+                      ORDER BY 
+                        "STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY_TMP"."UPDATED_AT" DESC
+                    ) = 1
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY_TMP: 504b2775-cdbb-4c82-849d-97e124064d95
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE
+            nodeName: STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY_TMP
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE', 'STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY_TMP') }} "STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY_TMP"
+            WHERE COALESCE("STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY_TMP"."_FIVETRAN_ACTIVE",TRUE )
+        name: STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY
+        noLinkRefs: []
+  name: STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY
+  overrideSQL: false
+  schema: ""
+  sqlType: DYNAMIC:::156
+  type: sql
+  version: 1
+type: Node

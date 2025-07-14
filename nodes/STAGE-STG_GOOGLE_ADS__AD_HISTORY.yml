@@ -1,0 +1,471 @@
+fileVersion: 1
+id: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+name: STG_GOOGLE_ADS__AD_HISTORY
+operation:
+  config:
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    refresh_mode: AUTO
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+    warehouseName: "{{ parameters.GoogleAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: Each record represents a version of an ad in Google Ads.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35e15d77-f4ea-4582-be6d-56a808575f90
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: The source of the record if the unioning functionality is being used. If not this field will be empty.
+        name: SOURCE_RELATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('' AS TEXT)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ac7cb33-98d5-499f-befe-f8328273dabf
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the AdGroup.
+        name: AD_GROUP_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a9df049-52fb-475f-a506-8ec676ae83a1
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: CAST("STG_GOOGLE_ADS__AD_HISTORY_TMP"."AD_GROUP_ID" AS TEXT)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 86a53e04-1fa1-4faa-a529-d551f3be03be
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the Ad.
+        name: AD_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dd66fc75-1549-4b30-9123-0c650f5f585c
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b10b1935-3ab5-4017-b3fe-4c6382b80e7c
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: AD_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f49bd12f-1a2e-46a8-b1da-9208497b3204
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d9b77d78-89cc-4f3c-89e3-a72518b7beab
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: Timestamp of when the record was last updated in Google Ads.
+        name: UPDATED_AT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7668b80d-afc7-44c2-a142-96c96254f765
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26c102a2-3bdc-438a-b43d-d920f7ebe4bf
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: VARCHAR(256)
+        description: The type of the ad in Google Ads.
+        name: AD_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d236f982-f97f-4a17-bb06-bd957aa8e524
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f221887e-3bc7-4be8-b06e-f9679803838d
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: VARCHAR(256)
+        description: Status of the Ad.
+        name: AD_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d899bf7-390f-46db-b879-1df2c6e02007
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 775cb83e-9bbd-4b7d-9b44-f5f56255cea9
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: VARCHAR(256)
+        description: The display url of the ad that is being served.
+        name: DISPLAY_URL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 658c6577-d1da-4905-9495-3957a4365cfa
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 34b4f339-e22f-4703-bfec-7dcb35e00951
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: VARCHAR(256)
+        description: The original list of final urls expressed as an array. Please be aware the test used on this field is intended to warn you if you have fields with multiple urls. If you do, the `final_url` field will filter down the urls within the array to just the first. Therefore, this package will only leverage one of possibly many urls within this field array.
+        name: SOURCE_FINAL_URLS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 303e42c5-d816-41b2-aa19-64707d136e68
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5afbe097-646f-42e5-ab9f-a2664d72d692
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: FINAL_URLS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 303e42c5-d816-41b2-aa19-64707d136e68
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']','')
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 16b92b4b-8164-4761-aae9-b80bb4e8ae9c
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: VARCHAR(256)
+        description: The first url in the list of the urls within the `final_urls` source field.
+        name: FINAL_URL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 303e42c5-d816-41b2-aa19-64707d136e68
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: |
+              SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3827ebe7-530b-4d02-bef4-6c6ae1a87c3b
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: BOOLEAN
+        defaultValue: ""
+        description: Boolean representing whether the record is the most recent version of the object.
+        name: IS_MOST_RECENT_RECORD
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7668b80d-afc7-44c2-a142-96c96254f765
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+              - columnCounter: dd66fc75-1549-4b30-9123-0c650f5f585c
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+              - columnCounter: 9a9df049-52fb-475f-a506-8ec676ae83a1
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: |-
+              ROW_NUMBER() OVER (PARTITION BY SOURCE_RELATION, ID, 
+              AD_GROUP_ID ORDER BY "STG_GOOGLE_ADS__AD_HISTORY_TMP"."UPDATED_AT" DESC ) = 1
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 50819222-6e17-418c-b338-0c98a942b23f
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: The base URL of the ad, extracted from the `final_urls`.
+        name: BASE_URL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 303e42c5-d816-41b2-aa19-64707d136e68
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: SPLIT_PART(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), '?', 1)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f6e9d73a-34e5-46ea-aac4-4029c7afb612
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: The URL host of the ad, extracted from the `final_urls`.
+        name: URL_HOST
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 303e42c5-d816-41b2-aa19-64707d136e68
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: |2-
+                    TRY_CAST(
+                      split_part(
+                        split_part(
+                          replace(
+                            replace(
+                              replace(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'android-app://', ''), 
+                              'http://', 
+                              ''
+                            ), 
+                            'https://', 
+                            ''
+                          ), 
+                          '/', 
+                          1
+                        ), 
+                        '?', 
+                        1
+                      ) as TEXT
+                    )
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: da679c5c-4666-438a-a441-75b4b1e5e5d3
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: STRING
+        description: The URL path of the ad, extracted from the `final_urls`.
+        name: URL_PATH
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: |-
+              '/' || try_cast(
+                      split_part(
+                        case when length(
+                          replace(
+                            replace(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'http://', ''), 
+                            'https://', 
+                            ''
+                          )
+                        )- coalesce(
+                          nullif(
+                            position(
+                              '/' in replace(
+                                replace(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'http://', ''), 
+                                'https://', 
+                                ''
+                              )
+                            ), 
+                            0
+                          ), 
+                          position(
+                            '?' in replace(
+                              replace(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'http://', ''), 
+                              'https://', 
+                              ''
+                            )
+                          ) -1
+                        ) = 0 then '' else right(
+                          replace(
+                            replace(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'http://', ''), 
+                            'https://', 
+                            ''
+                          ), 
+                          length(
+                            replace(
+                              replace(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'http://', ''), 
+                              'https://', 
+                              ''
+                            )
+                          )- coalesce(
+                            nullif(
+                              position(
+                                '/' in replace(
+                                  replace(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'http://', ''), 
+                                  'https://', 
+                                  ''
+                                )
+                              ), 
+                              0
+                            ), 
+                            position(
+                              '?' in replace(
+                                replace(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'http://', ''), 
+                                'https://', 
+                                ''
+                              )
+                            ) -1
+                          )
+                        ) end, 
+                        '?', 
+                        1
+                      ) as TEXT
+                    )
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb7029f9-31fd-430e-96e4-b2b50ac01f84
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: STRING
+        description: The utm_source parameter of the ad, extracted from the `final_urls`.
+        name: UTM_SOURCE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 303e42c5-d816-41b2-aa19-64707d136e68
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: |-
+              nullif(
+                      split_part(
+                        split_part(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'utm_source=', 2), 
+                        '&', 
+                        1
+                      ), 
+                      ''
+                    )
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 130746d6-3fd0-48aa-a49c-8506aea7d80f
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: STRING
+        description: The utm_medium parameter of the ad, extracted from the `final_urls`.
+        name: UTM_MEDIUM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 303e42c5-d816-41b2-aa19-64707d136e68
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: |-
+              nullif(
+                      split_part(
+                        split_part(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'utm_medium=', 2), 
+                        '&', 
+                        1
+                      ), 
+                      ''
+                    )
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: abb82ee1-d678-45d0-a2c7-8fcd4d1704b9
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: STRING
+        description: The utm_campaign parameter of the ad, extracted from the `final_urls`.
+        name: UTM_CAMPAIGN
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 303e42c5-d816-41b2-aa19-64707d136e68
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: |-
+              nullif(
+                      split_part(
+                        split_part(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'utm_campaign=', 2), 
+                        '&', 
+                        1
+                      ), 
+                      ''
+                    )
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fc4607d7-9466-41bb-9977-0bca601c9316
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: STRING
+        description: The utm_content parameter of the ad, extracted from the `final_urls`.
+        name: UTM_CONTENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 303e42c5-d816-41b2-aa19-64707d136e68
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: |-
+              nullif(
+                      split_part(
+                        split_part(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'utm_content=', 2), 
+                        '&', 
+                        1
+                      ), 
+                      ''
+                    )
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dafa00fa-089d-4c39-bff9-8552c680662c
+          stepCounter: 9e181e0f-4b6c-4725-9965-dddb70dc1985
+        config: {}
+        dataType: STRING
+        description: The utm_term parameter of the ad, extracted from the `final_urls`.
+        name: UTM_TERM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 303e42c5-d816-41b2-aa19-64707d136e68
+                stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+            transform: |-
+              nullif(
+                      split_part(
+                        split_part(SPLIT_PART(REPLACE(REPLACE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."FINAL_URLS", '[', ''), ']', ''), ',', 1), 'utm_term=', 2), 
+                        '&', 
+                        1
+                      ), 
+                      ''
+                    )
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          STG_GOOGLE_ADS__AD_HISTORY_TMP: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE
+            nodeName: STG_GOOGLE_ADS__AD_HISTORY_TMP
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE', 'STG_GOOGLE_ADS__AD_HISTORY_TMP') }} "STG_GOOGLE_ADS__AD_HISTORY_TMP"
+            WHERE COALESCE("STG_GOOGLE_ADS__AD_HISTORY_TMP"."_FIVETRAN_ACTIVE",TRUE )
+        name: STG_GOOGLE_ADS__AD_HISTORY
+        noLinkRefs: []
+  name: STG_GOOGLE_ADS__AD_HISTORY
+  overrideSQL: false
+  schema: ""
+  sqlType: DYNAMIC:::156
+  type: sql
+  version: 1
+type: Node

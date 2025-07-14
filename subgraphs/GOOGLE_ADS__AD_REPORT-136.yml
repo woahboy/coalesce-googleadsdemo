@@ -1,0 +1,22 @@
+fileVersion: 1
+id: "136"
+name: GOOGLE_ADS__AD_REPORT
+steps:
+  - 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+  - 22b683d4-ce73-4c07-8a1a-2282b28bf764
+  - 243e6ded-b771-4e0d-a665-46d5ba9a593d
+  - 2ac4d30b-62e8-41e7-80f2-713b2b3fb2af
+  - 350af704-ac24-44b8-8065-0cabf2298103
+  - 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+  - 4a6ef2a5-d3fa-4169-b5b6-9a7b43a7b5c8
+  - 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+  - 979bbbc7-f345-4add-9881-25472dc9c760
+  - 9e181e0f-4b6c-4725-9965-dddb70dc1985
+  - 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+  - a081d233-b991-4fbe-bdda-be93569732be
+  - a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+  - a85a171a-dbce-4c6c-9163-6d4234dde278
+  - be58f15f-4a62-4ae8-8028-a7bc0d56916d
+  - f982c642-682c-4902-9851-8068e6e68887
+type: Subgraph
+version: 1

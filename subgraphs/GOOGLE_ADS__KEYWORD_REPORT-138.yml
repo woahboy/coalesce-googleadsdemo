@@ -1,0 +1,19 @@
+fileVersion: 1
+id: "138"
+name: GOOGLE_ADS__KEYWORD_REPORT
+steps:
+  - 22b683d4-ce73-4c07-8a1a-2282b28bf764
+  - 243e6ded-b771-4e0d-a665-46d5ba9a593d
+  - 2ac4d30b-62e8-41e7-80f2-713b2b3fb2af
+  - 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+  - 350af704-ac24-44b8-8065-0cabf2298103
+  - 504b2775-cdbb-4c82-849d-97e124064d95
+  - 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+  - a081d233-b991-4fbe-bdda-be93569732be
+  - a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+  - afdeeafd-7cca-42e5-87ed-37b7fa1fa8cb
+  - be58f15f-4a62-4ae8-8028-a7bc0d56916d
+  - efffa61f-50aa-48db-b4a5-f4d184c7b8b8
+  - f982c642-682c-4902-9851-8068e6e68887
+type: Subgraph
+version: 1

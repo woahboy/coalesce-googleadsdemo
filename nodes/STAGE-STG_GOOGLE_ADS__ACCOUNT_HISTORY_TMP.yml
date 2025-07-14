@@ -1,0 +1,297 @@
+fileVersion: 1
+id: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+name: STG_GOOGLE_ADS__ACCOUNT_HISTORY_TMP
+operation:
+  config:
+    clusterKey: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: UNION
+    refresh_mode: AUTO
+    selectDistinct: false
+    warehouseName: "{{ parameters.GoogleAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: Each record represents a historical version of an account in Google Ads.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1c3d0ba2-c57d-45f4-bbfc-7c25fc398b3d
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the Account.
+        name: ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 14760350-aea4-4c3c-95f1-121fbcfc4802
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c942ea10-0093-4e9a-9a20-b258a3bf05a6
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: Timestamp of when the record was last updated in Google Ads.
+        name: UPDATED_AT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 309b345e-9e54-4ee1-b2b7-ef2f0ac20d29
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f8592f3-3847-42ce-a8c5-a642384d8d66
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: MANAGER_CUSTOMER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 42db8fb8-c071-469c-a58b-9d535fb40988
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a91299c-5ca7-4ca6-8af8-033e1f8ec5ca
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: BOOLEAN
+        description: Boolean indicating if auto tagging is enabled on the account ads.
+        name: AUTO_TAGGING_ENABLED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 16ad2d6b-0112-45db-89f7-f79546624726
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5b6f5102-ad2f-4fdf-b4fa-65cbb7286974
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: VARCHAR(256)
+        description: The currency of the spend reported.
+        name: CURRENCY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 69701b2b-2a4a-481d-92f0-e5dd757e8861
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b98207c-5372-4f9b-8045-fbbc92b05f73
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: VARCHAR(256)
+        description: The descriptive name of the Customer account.
+        name: DESCRIPTIVE_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c31c150f-1c68-4b19-b4f8-0aa1edfe1bfb
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a6add960-ca33-46a3-ab63-dd6d4785e045
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: FINAL_URL_SUFFIX
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 260f0113-9c17-43b9-aa3a-9d10cffde4e6
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bfb8bd9d-f586-47fe-a0d4-61e64195e145
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: HIDDEN
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d6bf500e-6709-45e1-8ff7-6ced3cadf1c8
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7419a374-3fc9-449e-9327-5c39a42e86f4
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: MANAGER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 416a8238-7d18-42f3-a9cd-87749c11b63e
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba9bc713-ef0a-4d24-9d6a-b1ebb0a4d8d9
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: FLOAT
+        description: ""
+        name: OPTIMIZATION_SCORE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 57da1548-9718-4901-ae43-b406dba9535e
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89c1aa86-86ea-4632-9af4-93c52da14c73
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: PAY_PER_CONVERSION_ELIGIBILITY_FAILURE_REASONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f91bcdfe-2b37-4bb8-a7e2-78fbca990416
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 259237e1-3361-49d0-a8bc-5bf3bc085765
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: TEST_ACCOUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 29bb772a-fa73-458f-81df-3680bf0b16a7
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c62dbf4a-8ba9-4b87-b6d7-7cf65ea86669
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: VARCHAR(256)
+        description: The time zone of the account ads.
+        name: TIME_ZONE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fc789a1d-206e-4a23-8199-b56822257247
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0d406f43-ab33-4f40-b85e-d0d1c964d81b
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: TRACKING_URL_TEMPLATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 37569acb-0781-4ce2-a20b-83eecc95adf7
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b56e9e7a-5e75-4d7f-9b3a-67b7478b10f0
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: Timestamp of when a record was last synced.
+        name: _FIVETRAN_SYNCED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e6cdf2d-e805-4329-9ac7-bf51981d044c
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7be94f8f-86b1-4f26-b29c-a04202e96664
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: _FIVETRAN_START
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cc037cb5-2b71-4897-aaa6-ca2d4b2c6f84
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eeaa5a6d-a782-4f77-8d0b-a8de62c41312
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: _FIVETRAN_END
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 56864fa4-b671-4f3f-bf76-ff5e7072863e
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 673cea7d-dcee-4dfe-91e5-685eb2c25d80
+          stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        config: {}
+        dataType: BOOLEAN
+        description: Boolean representing whether the state of the record is currently active.
+        name: _FIVETRAN_ACTIVE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 94e04c34-5411-4a5a-baa4-c2c11b6646d8
+                stepCounter: 243e6ded-b771-4e0d-a665-46d5ba9a593d
+            transform: ""
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: ACCOUNT_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'ACCOUNT_HISTORY') }} "ACCOUNT_HISTORY"
+        name: STG_GOOGLE_ADS__ACCOUNT_HISTORY_TMP
+        noLinkRefs: []
+  name: STG_GOOGLE_ADS__ACCOUNT_HISTORY_TMP
+  overrideSQL: false
+  schema: ""
+  sqlType: DYNAMIC:::156
+  type: sql
+  version: 1
+type: Node

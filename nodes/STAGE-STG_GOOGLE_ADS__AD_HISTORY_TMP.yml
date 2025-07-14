@@ -1,0 +1,381 @@
+fileVersion: 1
+id: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+name: STG_GOOGLE_ADS__AD_HISTORY_TMP
+operation:
+  config:
+    clusterKey: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: UNION
+    refresh_mode: AUTO
+    selectDistinct: false
+    warehouseName: "{{ parameters.GoogleAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: Each record represents a version of an ad in Google Ads.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9a9df049-52fb-475f-a506-8ec676ae83a1
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the AdGroup.
+        name: AD_GROUP_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b07f7928-22d1-48f5-9df6-c899c87b9318
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd66fc75-1549-4b30-9123-0c650f5f585c
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the Ad.
+        name: ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0383394f-37da-4720-b8c9-1c9f35a59eae
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7668b80d-afc7-44c2-a142-96c96254f765
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: Timestamp of when the record was last updated in Google Ads.
+        name: UPDATED_AT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3c04c95d-ed14-494e-86ec-c4e626fbf9e2
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7332b87b-c235-4d31-b596-78636ca17971
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: ACTION_ITEMS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 347863e7-662e-44f9-accf-0a6b4dba339a
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019a2a17-8f87-46a6-bf44-50b1527f5346
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: AD_STRENGTH
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bd6095a8-a696-4339-85f4-39a17d718d2b
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9b4255da-9c88-40a2-80ef-3d0c99949e33
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: ADDED_BY_GOOGLE_ADS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 834df077-4f4c-49f4-8170-3afed6127fab
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ff67c328-f2b2-4314-b355-3fb7284566dc
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: DEVICE_PREFERENCE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e4aaf9d-a580-4760-b4ba-9931652cf1dc
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 658c6577-d1da-4905-9495-3957a4365cfa
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: The display url of the ad that is being served.
+        name: DISPLAY_URL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91b3dbad-f57c-4242-8308-192441b86350
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b96f8c64-993f-4ad0-acce-85b8a504459a
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: FINAL_URL_SUFFIX
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8ecae5f-57e8-4f2f-b9f3-39d2b6d35a39
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ba66e7b-8940-4548-bc1e-9936aa8287ff
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: FINAL_APP_URLS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 65391790-30c5-4ea6-95b3-82f2584138ad
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: abc67fa4-4802-4be9-b4ba-504f22937739
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: FINAL_MOBILE_URLS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 63207a6b-b977-422f-ab2b-af46dc922853
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 303e42c5-d816-41b2-aa19-64707d136e68
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: A list of urls that are used for the ad.
+        name: FINAL_URLS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 59f7a26d-06e0-4066-96e9-5d8cf2239dfa
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f49bd12f-1a2e-46a8-b1da-9208497b3204
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 850dfbb4-5969-4b17-a4d4-e50ba7c68f7a
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b11767b-8850-4c48-8896-4e7d1c03b547
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: POLICY_SUMMARY_APPROVAL_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 921efcf2-718a-460b-85ed-8d4c409c26d5
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bba6d4f7-55f2-4eac-8f88-837d1336d229
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: POLICY_SUMMARY_REVIEW_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a7e198a5-148c-4760-aed6-9a140a7a5b99
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2d899bf7-390f-46db-b879-1df2c6e02007
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: Status of the Ad.
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e3864ff9-659d-47cb-8b99-e076ff89ec9c
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20914123-5f5c-471d-94f0-55caa0690823
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: SYSTEM_MANAGED_RESOURCE_SOURCE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1592f4f9-3d50-448e-89b3-d1cea1f20af0
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e6a6e377-501c-4609-b64f-2418126548f4
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: TRACKING_URL_TEMPLATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ec098d6-7325-4842-98b4-d37e4518f5fb
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d236f982-f97f-4a17-bb06-bd957aa8e524
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: The type of the ad in Google Ads.
+        name: TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eba49fd9-5be5-43de-8ac2-c4a069d7d308
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e78c92b-5c62-4ce2-a430-b504e0d6321c
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: URL_COLLECTIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24b15e91-3c3c-4a27-a1fb-e3ab966cd5ff
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2f4008a-f8be-4b03-8472-bacdba64681e
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: Timestamp of when a record was last synced.
+        name: _FIVETRAN_SYNCED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb0d4dfc-6577-4ca8-9414-e34223f7a2d6
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8104ad2e-7967-4bc2-9cc5-ee1cf383cdf3
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: _FIVETRAN_START
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5148a355-bfb8-4e7d-aaf6-1325fdcb20b7
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 874195c3-e6b8-4cd2-9c25-f8178c1d040f
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: _FIVETRAN_END
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 98dac2bb-03be-4735-a892-2beacd829104
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb4fb6fa-6de2-45a7-859d-a10709441335
+          stepCounter: 0d7ff202-cd11-4915-8ed5-3e217b859c9a
+        config: {}
+        dataType: BOOLEAN
+        description: Boolean representing whether the state of the record is currently active.
+        name: _FIVETRAN_ACTIVE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9fd880c3-1a09-4142-83b0-38c30b8553df
+                stepCounter: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
+            transform: ""
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: AD_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'AD_HISTORY') }} "AD_HISTORY"
+        name: STG_GOOGLE_ADS__AD_HISTORY_TMP
+        noLinkRefs: []
+  name: STG_GOOGLE_ADS__AD_HISTORY_TMP
+  overrideSQL: false
+  schema: ""
+  sqlType: DYNAMIC:::156
+  type: sql
+  version: 1
+type: Node

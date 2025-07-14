@@ -1,0 +1,183 @@
+fileVersion: 1
+id: 350af704-ac24-44b8-8065-0cabf2298103
+name: STG_GOOGLE_ADS__ACCOUNT_HISTORY
+operation:
+  config:
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    refresh_mode: AUTO
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+    warehouseName: "{{ parameters.GoogleAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: Each record represents a historical version of an account in Google Ads.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f580f00a-3c44-46d6-9d3e-7f04028b0788
+          stepCounter: 350af704-ac24-44b8-8065-0cabf2298103
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: The source of the record if the unioning functionality is being used. If not this field will be empty.
+        name: SOURCE_RELATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('' AS TEXT)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9a84c1c0-084d-4d8c-8ee6-dd6267afbbbf
+          stepCounter: 350af704-ac24-44b8-8065-0cabf2298103
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the Account.
+        name: ACCOUNT_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1c3d0ba2-c57d-45f4-bbfc-7c25fc398b3d
+                stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa94fc1c-d2a2-4698-8999-d72b90595c22
+          stepCounter: 350af704-ac24-44b8-8065-0cabf2298103
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: Timestamp of when a record was last synced.
+        name: UPDATED_AT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c942ea10-0093-4e9a-9a20-b258a3bf05a6
+                stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 88fd5b24-5e6c-4b0a-b450-4d683a654621
+          stepCounter: 350af704-ac24-44b8-8065-0cabf2298103
+        config: {}
+        dataType: VARCHAR(256)
+        description: The currency of the spend reported.
+        name: CURRENCY_CODE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b6f5102-ad2f-4fdf-b4fa-65cbb7286974
+                stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b4ee6a4-9721-47aa-bc7b-67e3deb5d4f9
+          stepCounter: 350af704-ac24-44b8-8065-0cabf2298103
+        config: {}
+        dataType: BOOLEAN
+        description: Boolean indicating if auto tagging is enabled on the account ads.
+        name: AUTO_TAGGING_ENABLED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a91299c-5ca7-4ca6-8af8-033e1f8ec5ca
+                stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ab2d375-3d5d-4536-80fa-e5b6b73ef570
+          stepCounter: 350af704-ac24-44b8-8065-0cabf2298103
+        config: {}
+        dataType: VARCHAR(256)
+        description: The time zone of the account ads.
+        name: TIME_ZONE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c62dbf4a-8ba9-4b87-b6d7-7cf65ea86669
+                stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7cfd62b6-b220-4edb-8a77-57c1f08fc15b
+          stepCounter: 350af704-ac24-44b8-8065-0cabf2298103
+        config: {}
+        dataType: VARCHAR(256)
+        description: The descriptive name of the Customer account.
+        name: ACCOUNT_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b98207c-5372-4f9b-8045-fbbc92b05f73
+                stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46144e15-decb-434d-b2e7-7fa226526d09
+          stepCounter: 350af704-ac24-44b8-8065-0cabf2298103
+        config: {}
+        dataType: VARCHAR(256)
+        defaultValue: ""
+        description: Boolean representing whether the record is the most recent version of the object.
+        name: IS_MOST_RECENT_RECORD
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1c3d0ba2-c57d-45f4-bbfc-7c25fc398b3d
+                stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+              - columnCounter: c942ea10-0093-4e9a-9a20-b258a3bf05a6
+                stepCounter: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+            transform: |-
+              ROW_NUMBER() OVER (
+                      PARTITION BY SOURCE_RELATION, 
+                      ID 
+                      ORDER BY 
+                        UPDATED_AT DESC
+                    ) = 1
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          STG_GOOGLE_ADS__ACCOUNT_HISTORY_TMP: 7c73e390-7a9a-4015-89e8-226d0b0fd65b
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE
+            nodeName: STG_GOOGLE_ADS__ACCOUNT_HISTORY_TMP
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE', 'STG_GOOGLE_ADS__ACCOUNT_HISTORY_TMP') }} "STG_GOOGLE_ADS__ACCOUNT_HISTORY_TMP"
+            WHERE COALESCE("STG_GOOGLE_ADS__ACCOUNT_HISTORY_TMP"."_FIVETRAN_ACTIVE",TRUE)
+        name: STG_GOOGLE_ADS__ACCOUNT_HISTORY
+        noLinkRefs: []
+  name: STG_GOOGLE_ADS__ACCOUNT_HISTORY
+  overrideSQL: false
+  schema: ""
+  sqlType: DYNAMIC:::156
+  type: sql
+  version: 1
+type: Node

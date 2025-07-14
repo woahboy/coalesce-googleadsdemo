@@ -1,0 +1,191 @@
+fileVersion: 1
+id: 260ef76a-8b8d-4e57-b81f-3dd4a0391fdc
+name: VERTICAL_SUM_CONVERSIONS
+operation:
+  config:
+    clusterKey: false
+    downstreamOption: false
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: UNION ALL
+    lagSpecification:
+      items:
+        - lagPeriod: Minutes
+          lagValue: 60
+    postSQL: ""
+    preSQL: ""
+    refresh_mode: AUTO
+    selectDistinct: false
+    testsEnabled: true
+    warehouseName: "{{ parameters.GoogleAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: true
+  locationName: TARGET
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cf0d9f15-b372-4db2-9964-a59af392508f
+          stepCounter: 260ef76a-8b8d-4e57-b81f-3dd4a0391fdc
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        isSurrogateKey: true
+        name: PSTG_METRICS_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+          - columnReferences: []
+            transform: ""
+          - columnReferences: []
+            transform: ""
+          - columnReferences: []
+            transform: ""
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a5738333-4f12-4812-b44a-60313d3742a8
+          stepCounter: 260ef76a-8b8d-4e57-b81f-3dd4a0391fdc
+        config: {}
+        dataType: STRING
+        description: ""
+        name: COMPARISONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ede4529d-1a8b-44ec-b28f-33a4dfc12046
+                stepCounter: 425fccb9-980b-46c8-8d89-22f30a0254c5
+            transform: "'ads'"
+          - columnReferences: []
+            transform: "'accounts'"
+          - columnReferences: []
+            transform: "'ad groups'"
+          - columnReferences: []
+            transform: "'keywords'"
+          - columnReferences: []
+            transform: "'urls'"
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          M1: 425fccb9-980b-46c8-8d89-22f30a0254c5
+          M2: 425fccb9-980b-46c8-8d89-22f30a0254c5
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: METRICS
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'METRICS') }} M1
+            JOIN {{ ref('TARGET', 'METRICS') }} M2
+              ON TRUE
+              WHERE  
+                (M1.TOTAL_VALUE != M2.TOTAL_VALUE
+                OR M1.CONVERSIONS != M2.CONVERSIONS
+                OR M1.VIEW_THROUGH_CONVERSIONS != M2.VIEW_THROUGH_CONVERSIONS) 
+            AND M1.CTE = 'AD_MODEL' 
+            AND M2.CTE = 'AD_SOURCE'
+        name: PSTG_METRICS_05
+        noLinkRefs: []
+      - aliases:
+          M1: 425fccb9-980b-46c8-8d89-22f30a0254c5
+          M2: 425fccb9-980b-46c8-8d89-22f30a0254c5
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: METRICS
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'METRICS') }} M1
+            JOIN {{ ref('TARGET', 'METRICS') }} M2
+              ON TRUE
+              WHERE  
+                (M1.TOTAL_VALUE != M2.TOTAL_VALUE
+                OR M1.CONVERSIONS != M2.CONVERSIONS
+                OR M1.VIEW_THROUGH_CONVERSIONS != M2.VIEW_THROUGH_CONVERSIONS) 
+            AND M1.CTE = 'ACCOUNT_MODEL' 
+            AND M2.CTE = 'ACCOUNT_SOURCE'
+        name: PSTG_METRICS_10
+        noLinkRefs: []
+      - aliases:
+          M1: 425fccb9-980b-46c8-8d89-22f30a0254c5
+          M2: 425fccb9-980b-46c8-8d89-22f30a0254c5
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: METRICS
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'METRICS') }} M1
+            JOIN {{ ref('TARGET', 'METRICS') }} M2
+              ON TRUE
+              WHERE  
+                (M1.TOTAL_VALUE != M2.TOTAL_VALUE
+                OR M1.CONVERSIONS != M2.CONVERSIONS
+                OR M1.VIEW_THROUGH_CONVERSIONS != M2.VIEW_THROUGH_CONVERSIONS) 
+            AND M1.CTE = 'CAMPAIGN_MODEL' 
+            AND M2.CTE = 'CAMPAIGN_SOURCE'
+        name: PSTG_METRICS_15
+        noLinkRefs: []
+      - aliases:
+          M1: 425fccb9-980b-46c8-8d89-22f30a0254c5
+          M2: 425fccb9-980b-46c8-8d89-22f30a0254c5
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: METRICS
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'METRICS') }} M1
+            JOIN {{ ref('TARGET', 'METRICS') }} M2
+              ON TRUE
+              WHERE  
+                (M1.TOTAL_VALUE != M2.TOTAL_VALUE
+                OR M1.CONVERSIONS != M2.CONVERSIONS
+                OR M1.VIEW_THROUGH_CONVERSIONS != M2.VIEW_THROUGH_CONVERSIONS) 
+            AND M1.CTE = 'KEYWORD_MODEL' 
+            AND M2.CTE = 'KEYWORD_SOURCE'
+        name: PSTG_METRICS_20
+        noLinkRefs: []
+      - aliases:
+          M1: 425fccb9-980b-46c8-8d89-22f30a0254c5
+          M2: 425fccb9-980b-46c8-8d89-22f30a0254c5
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: METRICS
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'METRICS') }} M1
+            JOIN {{ ref('TARGET', 'METRICS') }} M2
+              ON TRUE
+              WHERE  
+                (M1.TOTAL_VALUE != M2.TOTAL_VALUE
+                OR M1.CONVERSIONS != M2.CONVERSIONS
+                OR M1.VIEW_THROUGH_CONVERSIONS != M2.VIEW_THROUGH_CONVERSIONS) 
+            AND M1.CTE = 'URL_MODEL' 
+            AND M2.CTE = 'URL_SOURCE'
+        name: PSTG_METRICS_25
+        noLinkRefs: []
+  name: VERTICAL_SUM_CONVERSIONS
+  overrideSQL: false
+  schema: ""
+  sqlType: DYNAMIC:::156
+  type: sql
+  version: 1
+type: Node

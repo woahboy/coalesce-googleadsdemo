@@ -1,0 +1,759 @@
+fileVersion: 1
+id: 504b2775-cdbb-4c82-849d-97e124064d95
+name: STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY_TMP
+operation:
+  config:
+    clusterKey: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: UNION
+    refresh_mode: AUTO
+    selectDistinct: false
+    warehouseName: "{{ parameters.GoogleAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: Each record represents a historical version of an ad group criterion in Google Ads.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b0f67a2-aecc-4bb4-a349-7f046223130f
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the AdGroup.
+        name: AD_GROUP_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ada2c82-b7a4-4296-9e4c-4af75e4d976a
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b76891d1-fa27-46f3-a925-78c688848363
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: Unique identifier of the ad group criterion.
+        name: ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8bd58f0f-134b-45c1-b2ba-af5d4da495a2
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8298ff66-6380-4da3-af70-a4475ae6e75a
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: Timestamp of when the record was last updated in Google Ads.
+        name: UPDATED_AT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5173afc-95d8-44a8-a097-eff7c5e16d98
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 105c73dc-532c-4d53-8e9b-71c0eb7a79be
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: USER_INTEREST_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ede6b21-60ed-4293-b0e5-a7250232eeb0
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 166df862-403a-4f22-8fe8-e762bc42ac7b
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: USER_LIST_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 647ee328-28b0-4030-b3f9-3f863b047eeb
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: be327bd8-f093-47f4-94f7-62b30747f02f
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: AGE_RANGE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1c9c8a4-7c1e-4d7a-a612-83487c1180c5
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f6d725eb-757c-4afc-9526-92b084781adf
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: APP_PAYMENT_MODEL_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 11bc593b-5279-45df-acb5-4d19b067dc8a
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ac41aa8f-401d-4e7e-8855-e05f00fdaa5f
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: APPROVAL_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8916df7d-3a01-4252-912e-60099dbe68ef
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f3785e3a-6ace-42c8-9aa1-87a5b2b16533
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: FLOAT
+        description: ""
+        name: BID_MODIFIER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c4d1baea-3945-4133-900d-3bdec630eac6
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f90bcaa-b3aa-4b7d-a4e9-c9d7676df1e4
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: CPC_BID_MICROS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5eb8340f-82e1-4456-87f4-e74e9e0e381d
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d3e75238-da9f-458a-8fa8-836daa31516f
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: CPM_BID_MICROS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dd078088-36c5-49ea-9794-5609bdd9926d
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9452ba19-323d-4ad9-8fca-59641ed8c50b
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: CPV_BID_MICROS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d8dfb832-e2d4-462f-a6c1-638811dd313d
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 053fed61-3cd0-422a-949c-a28d90fe7b61
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: CUSTOM_AFFINITY_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a29ba035-745a-4ed9-b961-28bd0dc23e31
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c00bc984-9943-40d5-8099-f401d52c34c9
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: CUSTOM_AUDIENCE_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d471971-0005-4cfa-bebb-7462cbebc255
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3d44566a-5d18-41a4-91d1-82cc42888c9c
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: CUSTOM_INTENT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f006e7cf-8f1b-4ba9-a17c-fca62a65134e
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8a78fc49-f1e6-4289-b876-bc44a7eee5df
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: DISAPPROVAL_REASONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 51af794c-6c61-4f63-b9e5-61800a58359a
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bef4c889-e578-4eac-b5ff-11bf00f2d834
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: DISPLAY_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ce4c5b48-4d60-474e-9dac-75cb744e2435
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 23090667-8628-4d73-bf76-2c7e4dcec8d7
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: FINAL_MOBILE_URLS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6225bca4-d7fc-41e6-81a1-0c4444b0a6d6
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01fea71f-0ee2-4930-9918-9ba154c9b3e9
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: FINAL_URLS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f2252536-3007-4c80-ac1f-a0bc7e536b08
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 444171a4-3953-4139-82a2-4233ebca817b
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: FINAL_URL_SUFFIX
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a424058d-1f71-447f-9c03-3b93582dc29f
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7097a6c4-a1cb-4550-9c58-82af0d335dac
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: FIRST_PAGE_CPC_MICROS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 52e658a6-6769-4a67-a605-74c9d98ea1d7
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f4fb90a5-597f-4a44-820f-dd23f100adf4
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: FIRST_POSITION_CPC_MICROS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b4df81c5-aa4e-4b25-91ce-32fcee14314d
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 417ce3e3-6dc5-4197-9731-3478c58a7731
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: GENDER_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 47c59011-50ed-44b7-9eb4-634b27a1c43a
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a6cf220c-8ea2-4d11-bdf9-b65474a03638
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: INCOME_RANGE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 98ea0e73-6a0b-4941-94d9-e3a05f322ea2
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3a57311d-8367-4c14-af57-3b41b3b93bcf
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: The match type which dictates how closely the keyword needs to match with the user’s search query so that the ad can be considered for the auction.
+        name: KEYWORD_MATCH_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9496f405-54ee-461e-a572-550651d0360e
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bbf8c79c-2502-4ac0-b70e-349a80d8d018
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: The text used within the keyword criterion that is being matched against.
+        name: KEYWORD_TEXT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b486a84e-d4a8-4296-b5a9-233f5b3a5b68
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5646bafc-398f-43de-8b02-5efca2aafa98
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: MOBILE_APP_CATEGORY_CONSTANT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f833c52d-75e2-44f1-8845-8c5e25ce014d
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7932c132-6244-4216-af13-6319aafa1502
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: MOBILE_APP_CATEGORY_CONSTANT_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7566604d-04a9-4fd3-b09c-10ac522b5b7d
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 632c8748-aa8b-424d-b75f-665c980b4e8f
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: MOBILE_APPLICATION_APP_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b0551d00-1822-4a73-8b73-51b5acbd4b8e
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e9399a0-382d-41fa-9d11-fc2679768085
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: MOBILE_APPLICATION_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7ab3c367-b465-47af-a079-4da81773ccea
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 851405a2-3f90-46cd-91f0-9aaa4b75b053
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: NEGATIVE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f44c6165-1e13-4740-a775-29a975c3d94a
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8a159774-9129-4cad-8cf9-a6dfcdd5781b
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: PARENT_AD_GROUP_CRITERION_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c43bb15f-b9bf-4740-8e4a-7addc726f1ac
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 497cf4c9-b506-4f11-b36f-5dac5d521559
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: PARENTAL_STATUS_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e6b0141-2628-45ea-bc0e-aa870af0cc95
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ce9dbf8-1ab7-428a-b50b-299b57ae3862
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: PLACEMENT_URL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c3cd94ed-e648-42f8-abdd-148ef1b12a64
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8f18352-1803-454b-a88c-64ed8abeeb6e
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: QUALITY_INFO_SCORE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0533d58f-f6e8-49e5-ada4-eb6b03ba47a9
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35b90436-f03e-4463-8ad6-231c3ef2c18e
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: QUALITY_INFO_CREATIVE_SCORE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 62d1e6ac-d6d6-464c-b824-f36218219eb1
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 98cba87a-10d5-497e-9d7a-4320cf23ccce
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: QUALITY_INFO_POST_CLICK_SCORE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8fe383da-1ec4-44b7-a238-8484f07f1c61
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f320cbe-ee64-4eed-ad46-2f6675d87f35
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: QUALITY_INFO_SEARCH_PREDICTED_CTR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 008f76ee-ff17-45c5-bf91-ce3dbd241901
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc9a8875-2793-466a-95d2-08b235dee819
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: The current status of the ad group criterion.
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d608aa9b-7bb3-4f9a-8b27-84ea8dfd13f3
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3d7cf659-a391-49bd-9f39-60e074e99523
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: SYSTEM_SERVING_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4467a0cd-deaf-4288-a020-b28d14448bf2
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 21537cfa-edee-4ade-9123-7a456fad3363
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: TOP_OF_PAGE_CPC_MICROS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c5e4e4a9-119d-4607-b421-31d6a84e3377
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e82312a-6b43-4c32-8b1a-4223879a7b52
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: TOPIC_CONSTANT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1118f73b-866b-4b39-a84b-53e913168cfe
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e92c6db-6895-4cba-8d1b-85fd9882a5d7
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: TRACKING_URL_TEMPLATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5ea3bec9-d747-4d4c-8b34-f12069ac32d5
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cce4e007-9aa3-4cb5-af76-d53bc991a143
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: The type of ad group criterion.
+        name: TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7b520a25-d5cb-4b70-a84d-820b51de2c4b
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f6228076-6bc3-4725-9932-19e47c305b51
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: WEBPAGE_CONDITIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ecfdab6-d916-4415-adb5-8fbac3cd1223
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b91d057a-4214-40c2-84d5-ef8146ace351
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: YOUTUBE_CHANNEL_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7974d38d-dfb1-414a-be17-f4844bd6baa0
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 776c9626-1943-4d99-8ed8-287f7bdf0b5a
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: YOUTUBE_VIDEO_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e6f96a88-ea96-47d0-821c-da4336b23b75
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f9200c9-ee32-44e0-a0af-c9012a4d4bdf
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: Timestamp of when a record was last synced.
+        name: _FIVETRAN_SYNCED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8c0db312-e534-49a8-9af8-d8c84cc281b1
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 258cf4c4-8a97-4150-9ba2-45d948bf8e08
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: _FIVETRAN_START
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0a03af57-bd3a-4f86-9e6b-a7dbe7f61174
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 573b65f4-9536-4dda-a119-b70e0d9d3374
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: _FIVETRAN_END
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5cd804f3-1261-4910-b86c-63ab41be7d04
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 080a9e1c-b073-4333-90a4-494e0ea5c796
+          stepCounter: 504b2775-cdbb-4c82-849d-97e124064d95
+        config: {}
+        dataType: BOOLEAN
+        description: Boolean representing whether the state of the record is currently active.
+        name: _FIVETRAN_ACTIVE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 75257a45-10c2-4c12-95e9-7b850be0befa
+                stepCounter: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
+            transform: ""
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: AD_GROUP_CRITERION_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'AD_GROUP_CRITERION_HISTORY') }} "AD_GROUP_CRITERION_HISTORY"
+        name: STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY_TMP
+        noLinkRefs: []
+  name: STG_GOOGLE_ADS__AD_GROUP_CRITERION_HISTORY_TMP
+  overrideSQL: false
+  schema: ""
+  sqlType: DYNAMIC:::156
+  type: sql
+  version: 1
+type: Node

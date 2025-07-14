@@ -1,0 +1,253 @@
+fileVersion: 1
+id: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+name: STG_GOOGLE_ADS__CAMPAIGN_HISTORY
+operation:
+  config:
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    refresh_mode: AUTO
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+    warehouseName: "{{ parameters.GoogleAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: Each record represents a version of a campaign in Google Ads.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: defb41e6-13d4-454e-bd97-898c4c8e8ec8
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: The source of the record if the unioning functionality is being used. If not this field will be empty.
+        name: SOURCE_RELATION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('' AS TEXT)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 625cfc22-bca4-4a67-a21a-1029edb3acba
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the Campaign.
+        name: CAMPAIGN_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f1fc1af3-2d6b-430f-a2fc-d4366a75adea
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 86c97ecd-ef9b-4e37-a8b3-2aa1049ca65c
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: Timestamp of when the record was last updated in Google Ads.
+        name: UPDATED_AT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 99a421a6-89d1-4ef1-9304-30faf3b7b675
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d355ef1-772b-4acf-a527-a780eae365ce
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: VARCHAR(256)
+        description: The name of the Campaign.
+        name: CAMPAIGN_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 621e5438-4dc2-49c6-8a2d-5393d07a2950
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bfbabc98-d29d-42ec-a132-1402aa6b50c7
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The Customer ID.
+        name: ACCOUNT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 85e49b29-0a42-4ab2-b2b9-fa6c41004db1
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca4858e6-99e9-4c39-b296-6cb81ed5149d
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: VARCHAR(256)
+        description: The type of advertising channel being used by the campaign.
+        name: ADVERTISING_CHANNEL_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 40f2618d-ff03-4467-8d77-0ce4008a11a7
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 37dffaec-0ef9-4d1e-9a53-a642033032e5
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: VARCHAR(256)
+        description: The advertising channel subtype that is being used by the campaign.
+        name: ADVERTISING_CHANNEL_SUBTYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dd1f3884-e048-4259-ab61-f41c85f5b91b
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd3f0e01-7afd-40b5-ac15-a574202cc3bb
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: VARCHAR(256)
+        description: The start date of the campaign.
+        name: START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dd37f3c9-b608-4a74-9495-3e069baccc7f
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f4648f6-20b4-4ee7-bae0-e0c754fbfae6
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: VARCHAR(256)
+        description: The end date of the campaign.
+        name: END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b4e4868-c1d6-4790-b1f8-7401ce7299f6
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0bd290e6-889c-49f8-b7dd-08212d37c95d
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: VARCHAR(256)
+        description: Status of the ads and how they are currently being served.
+        name: SERVING_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3d2de074-0109-470e-8069-514bded15516
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f2ac776-e8bb-4deb-9a02-368d0561231f
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: VARCHAR(256)
+        description: General status of the campaign.
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0e3c4a6a-8264-4193-a56a-ea9a5ee66f2e
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4c39e76-23b0-4d05-995f-4db65987526b
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: VARCHAR(256)
+        description: The tracking url template being used throughout the campaign ads.
+        name: TRACKING_URL_TEMPLATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b244b9ee-50f9-4ef6-a2f9-163e607961f5
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb255565-7cb8-475b-a3af-99cfef2595bf
+          stepCounter: 22b683d4-ce73-4c07-8a1a-2282b28bf764
+        config: {}
+        dataType: BOOLEAN
+        defaultValue: ""
+        description: Boolean representing whether the record is the most recent version of the object.
+        name: IS_MOST_RECENT_RECORD
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 99a421a6-89d1-4ef1-9304-30faf3b7b675
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+              - columnCounter: f1fc1af3-2d6b-430f-a2fc-d4366a75adea
+                stepCounter: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+            transform: |2-
+                    ROW_NUMBER() OVER (
+                      PARTITION BY SOURCE_RELATION, 
+                      ID 
+                      ORDER BY 
+                        "STG_GOOGLE_ADS__CAMPAIGN_HISTORY_TMP"."UPDATED_AT" DESC
+                    )
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          STG_GOOGLE_ADS__CAMPAIGN_HISTORY_TMP: a299b1ac-f9a5-4b06-acf8-5b66a70196f4
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE
+            nodeName: STG_GOOGLE_ADS__CAMPAIGN_HISTORY_TMP
+        join:
+          joinCondition: |-
+            FROM {{ ref('STAGE', 'STG_GOOGLE_ADS__CAMPAIGN_HISTORY_TMP') }} "STG_GOOGLE_ADS__CAMPAIGN_HISTORY_TMP"
+            WHERE COALESCE("STG_GOOGLE_ADS__CAMPAIGN_HISTORY_TMP"."_FIVETRAN_ACTIVE",TRUE )
+        name: STG_GOOGLE_ADS__CAMPAIGN_HISTORY
+        noLinkRefs: []
+  name: STG_GOOGLE_ADS__CAMPAIGN_HISTORY
+  overrideSQL: false
+  schema: ""
+  sqlType: DYNAMIC:::156
+  type: sql
+  version: 1
+type: Node

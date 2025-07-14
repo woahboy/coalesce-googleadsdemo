@@ -1,0 +1,412 @@
+fileVersion: 1
+id: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+name: STG_GOOGLE_ADS__AD_STATS_TMP
+operation:
+  config:
+    clusterKey: false
+    downstreamOption: true
+    groupByAll: false
+    initialize: ON_CREATE
+    insertStrategy: UNION
+    refresh_mode: AUTO
+    selectDistinct: false
+    warehouseName: "{{ parameters.GoogleAdsPipelineWarehouse }}"
+  database: ""
+  deployEnabled: true
+  description: Each record represents the daily performance of an ad in Google Ads broken down to the ad network, device type, and ad group criterion.
+  isMultisource: false
+  locationName: STAGE
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c5d501a8-817c-4a45-a8e3-5bdae6ed2e76
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The Customer ID.
+        name: CUSTOMER_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a5578a20-de67-48ec-9635-5f5da36b2c8a
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4c250b00-3bb6-441a-8422-182c1ca8d312
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: DATE
+        description: The date being reported on.
+        name: DATE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aa5e4537-7d3e-4cfc-8e26-a4c095b87167
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 805d90a4-25f0-46ec-9c44-ebc1b6697f5d
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: VARCHAR(256)
+        description: Unique ID used by Fivetran to sync and dedupe data.
+        name: _FIVETRAN_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1eac8a0b-8be0-4f14-b272-792f04955ada
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 67cf8149-449b-4d2f-aa6b-f26d750d0f5d
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: CAMPAIGN_BASE_CAMPAIGN
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b73dea64-a316-4db8-b91a-980215ca12b8
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: da09eb14-4ccb-4c7d-be1a-4c753391b878
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: FLOAT
+        description: The number of conversions you've received, across your conversion actions. Conversions are measured with conversion tracking and may include [modeled](https://support.google.com/google-ads/answer/10081327?sjid=12862894247631803415-NC) conversions in cases where you are not able to observe all conversions that took place. You can use this column to see how often your ads led customers to actions that you’ve defined as valuable for your business.
+        name: CONVERSIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cfb64afd-78aa-4f0b-9c38-085c3d27297f
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 36c5d639-30a0-4b02-ae52-a204307c4877
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: INTERACTIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fe521484-e460-4dc7-8dfe-f60aa9ff60bf
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 58f51eb6-eac6-4119-b133-cc8701116d45
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: INTERACTION_EVENT_TYPES
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a564e4f7-2911-4635-b041-4d1c7b2bcd6d
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c75884ae-43b5-4467-b1c6-50cd04b87d56
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the Campaign.
+        name: CAMPAIGN_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d646bad7-3bc8-49f9-b8e8-deab6abe4d67
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 53f3abc1-283b-4077-bfe9-2a0b33fe12fd
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: VARCHAR(256)
+        description: Account ad performance per unique device where the ads were served.
+        name: DEVICE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6bf0217c-3dcc-4799-a605-65e26512da2a
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4bb75204-f515-4539-ba58-2c03107192a4
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ACTIVE_VIEW_IMPRESSIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c9db40cc-58d9-4394-bbc7-5dc7a2991a76
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ed2b9b0-d898-47b9-af53-54d3dc9b96a2
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The number of clicks.
+        name: CLICKS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fdc9d4ee-83e2-4b9d-8769-16abe438e775
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ac289a2c-5219-41a7-ab95-04164544f008
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ACTIVE_VIEW_MEASURABLE_IMPRESSIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1bd02ef4-c360-494c-a5e6-9dc66bc7babf
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: af7e291c-fea3-460c-99e0-9279c466c04b
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: FLOAT
+        description: ""
+        name: COST_PER_CONVERSION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d95f215-ff08-4e8c-8834-dda09348c8c6
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 63996093-c856-44ac-8213-feb590d4c538
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: FLOAT
+        description: ""
+        name: ACTIVE_VIEW_MEASURABILITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1a088a6d-af7c-494b-a55b-58df7a21f555
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4e5825a5-f158-435a-b145-6d8f1ba5e890
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: FLOAT
+        description: The sum of monetary values for your `conversions`. You have to enter a value in the Google Ads UI for your conversion actions to make this metric useful.
+        name: CONVERSIONS_VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 70fbd27b-d14d-455c-af5e-dc74067f46e8
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b50ec5a-638a-4dd9-a53c-70ccde151dd7
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the Ad.
+        name: AD_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8fed46ba-2492-49da-8a5c-7ee8606a81c4
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f476146d-88ad-4bd8-86f0-e7efb904dc5f
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: VARCHAR(256)
+        description: The Google Ad network type used across the account.
+        name: AD_NETWORK_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 33cdfc4b-ab0b-4ba9-9325-defceaa482e3
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 670b4471-d724-4073-b315-cbc56ad046d2
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: Count of how often your ad has appeared on a search results page or website on the Google Network.
+        name: IMPRESSIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d46b9d25-5b1a-4595-aaf2-cee6df46b6d4
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 215361f9-5b2a-4d59-af44-3d3cde152ae3
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: FLOAT
+        description: ""
+        name: ACTIVE_VIEW_VIEWABILITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3ae27739-b78a-49f1-a87d-921e683e209f
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d37f8835-015d-481f-b7b0-5afe814b7e2e
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The ID of the AdGroup.
+        name: AD_GROUP_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 25aa672f-0340-4c48-9d92-5d1481e7b9b8
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35fbc3b9-03e8-47d7-ba09-4ec87a95c0a7
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: |-
+          For video campaigns, view-through conversions tell you when an _impression_ of your video ad leads to a conversion on your site. The last impression of a video ad will get credit for the view-through conversion.
+
+          Keep in mind: An impression is different than a “view” of a video ad. A “view” is counted when someone watches 30 seconds (or the whole ad if it’s shorter than 30 seconds) or clicks on a part of the ad. A “view” that leads to a conversion is counted in the `conversions` column.
+        name: VIEW_THROUGH_CONVERSIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 417c7ba0-d691-4741-80cf-c2503ac5b5f8
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7812e2dd-cb05-471e-8672-97a439384b7e
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: VIDEO_VIEWS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24a4eefa-437a-43cb-a4bc-84c0fb230ea2
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 66cc4ebd-ccf6-4ccb-8154-f2e4dd09e19a
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ACTIVE_VIEW_MEASURABLE_COST_MICROS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 488a87bd-536f-411d-8106-ee7f5973e288
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 90c3d507-a7e5-4c64-bf1e-02809e0a3861
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: VARCHAR(256)
+        description: ""
+        name: AD_GROUP_BASE_AD_GROUP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 56eabfad-b234-40c3-8b03-5ae508f8281e
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 32fb9d1f-2f26-426e-afd4-2d8be167c5f0
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: NUMBER(38,0)
+        description: The sum of your cost-per-click (CPC) and cost-per-thousand impressions (CPM) costs during this period.
+        name: COST_MICROS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 596522b2-7456-43cf-a4bf-472cbe509d66
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9fc68e2e-0bf4-4a12-a399-1b9e1a5e5cf1
+          stepCounter: 9e199436-b5a8-486d-8e0f-f8f8c92887f8
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: Timestamp of when a record was last synced.
+        name: _FIVETRAN_SYNCED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 54f9225a-2a9d-4e52-b2f5-0de9860696d9
+                stepCounter: 979bbbc7-f345-4add-9881-25472dc9c760
+            transform: ""
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: AD_STATS
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'AD_STATS') }} "AD_STATS"
+        name: STG_GOOGLE_ADS__AD_STATS_TMP
+        noLinkRefs: []
+  name: STG_GOOGLE_ADS__AD_STATS_TMP
+  overrideSQL: false
+  schema: ""
+  sqlType: DYNAMIC:::156
+  type: sql
+  version: 1
+type: Node
