@@ -3,7 +3,6 @@ id: 2ac4d30b-62e8-41e7-80f2-713b2b3fb2af
 name: CAMPAIGN_HISTORY
 operation:
   database: ""
-  dataset: ""
   deployEnabled: true
   description: ""
   locationName: SOURCE
@@ -484,12 +483,9 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-    join:
-      joinCondition: FROM {{ ref('SOURCE', 'CAMPAIGN_HISTORY') }}
   name: CAMPAIGN_HISTORY
   schema: ""
   sqlType: Source
-  table: CAMPAIGN_HISTORY
   type: sourceInput
   version: 1
 type: Node

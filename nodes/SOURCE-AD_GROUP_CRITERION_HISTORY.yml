@@ -3,7 +3,6 @@ id: 2d63d527-a388-4fb3-bd63-8a3bc5a08758
 name: AD_GROUP_CRITERION_HISTORY
 operation:
   database: ""
-  dataset: ""
   deployEnabled: true
   description: ""
   locationName: SOURCE
@@ -978,12 +977,9 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-    join:
-      joinCondition: FROM {{ ref('SOURCE', 'AD_GROUP_CRITERION_HISTORY') }}
   name: AD_GROUP_CRITERION_HISTORY
   schema: ""
   sqlType: Source
-  table: AD_GROUP_CRITERION_HISTORY
   type: sourceInput
   version: 1
 type: Node

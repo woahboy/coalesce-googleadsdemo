@@ -3,7 +3,6 @@ id: 3d72fde0-2f0b-4fd5-b727-73ba764f5590
 name: AD_HISTORY
 operation:
   database: ""
-  dataset: ""
   deployEnabled: true
   description: ""
   locationName: SOURCE
@@ -465,12 +464,9 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-    join:
-      joinCondition: FROM {{ ref('SOURCE', 'AD_HISTORY') }}
   name: AD_HISTORY
   schema: ""
   sqlType: Source
-  table: AD_HISTORY
   type: sourceInput
   version: 1
 type: Node

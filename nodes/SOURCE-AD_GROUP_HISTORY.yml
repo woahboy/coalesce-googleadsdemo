@@ -3,7 +3,6 @@ id: a081d233-b991-4fbe-bdda-be93569732be
 name: AD_GROUP_HISTORY
 operation:
   database: ""
-  dataset: ""
   deployEnabled: true
   description: ""
   locationName: SOURCE
@@ -351,12 +350,9 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-    join:
-      joinCondition: FROM {{ ref('SOURCE', 'AD_GROUP_HISTORY') }}
   name: AD_GROUP_HISTORY
   schema: ""
   sqlType: Source
-  table: AD_GROUP_HISTORY
   type: sourceInput
   version: 1
 type: Node

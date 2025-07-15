@@ -3,7 +3,6 @@ id: 243e6ded-b771-4e0d-a665-46d5ba9a593d
 name: ACCOUNT_HISTORY
 operation:
   database: ""
-  dataset: ""
   deployEnabled: true
   description: ""
   locationName: SOURCE
@@ -351,12 +350,9 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-    join:
-      joinCondition: FROM {{ ref('SOURCE', 'ACCOUNT_HISTORY') }}
   name: ACCOUNT_HISTORY
   schema: ""
   sqlType: Source
-  table: ACCOUNT_HISTORY
   type: sourceInput
   version: 1
 type: Node

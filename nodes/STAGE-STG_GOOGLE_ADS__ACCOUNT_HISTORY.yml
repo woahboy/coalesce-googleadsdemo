@@ -177,7 +177,7 @@ operation:
   name: STG_GOOGLE_ADS__ACCOUNT_HISTORY
   overrideSQL: false
   schema: ""
-  sqlType: DYNAMIC:::156
+  sqlType: Dynamic:::347
   type: sql
   version: 1
 type: Node

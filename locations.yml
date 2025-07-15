@@ -1,0 +1,6 @@
+defaultStorageMapping: STAGE
+fileVersion: 1
+locations:
+  - SOURCE
+  - STAGE
+  - TARGET

@@ -386,7 +386,7 @@ operation:
   name: METRICS
   overrideSQL: false
   schema: ""
-  sqlType: DYNAMIC:::156
+  sqlType: Dynamic:::347
   type: sql
   version: 1
 type: Node

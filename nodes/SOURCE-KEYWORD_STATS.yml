@@ -3,7 +3,6 @@ id: ef9a789f-1fea-4def-911c-70f85631b1e0
 name: KEYWORD_STATS
 operation:
   database: ""
-  dataset: ""
   deployEnabled: true
   description: ""
   locationName: SOURCE
@@ -465,12 +464,9 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-    join:
-      joinCondition: FROM {{ ref('SOURCE', 'KEYWORD_STATS') }}
   name: KEYWORD_STATS
   schema: ""
   sqlType: Source
-  table: KEYWORD_STATS
   type: sourceInput
   version: 1
 type: Node
